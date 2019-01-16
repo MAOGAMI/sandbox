@@ -11,6 +11,17 @@
     <modules>
         <module>daro</module>
     </modules>
+    <properties>
+        <opencsv.version>4.4</opencsv.version>
+    </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.opencsv/opencsv -->
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>${opencsv.version}</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
