@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 
 class FileCreator {
@@ -16,14 +15,10 @@ class FileCreator {
    */
   static List<File> listFiles(String directoryPath) throws IOException, NullPointerException {
     File directory = new File(directoryPath);
-    List<File> resultList = new ArrayList<>();
     File[] fList = directory.listFiles();
-    resultList.addAll(Arrays.asList(fList));
+    List<File> resultList = new ArrayList<>(Arrays.asList(fList));
     for (File file : fList) {
-      if (file.isFile()) {
-        file.getAbsolutePath();
-
-      } else if (file.isDirectory()) {
+      if (file.isDirectory()) {
         resultList.addAll(listFiles(file.getAbsolutePath()));
       }
     }

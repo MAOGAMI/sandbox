@@ -7,13 +7,16 @@ public class Menu {
   private Scanner scanner = new Scanner(System.in);
 
   private void menu() {
-    System.out.println();
-    System.out.println("     ****************************************");
-    System.out.println("     *                 MENU                 *");
-    System.out.println("     ****************************************");
-    System.out.println("     1. Create productList.txt which contains list of files in directory.");
-    System.out.println("     2. Parse TXT to CSV.");
-    System.out.println("     0. Quit.");
+    System.out.println("************************************************************************");
+    System.out.println("*                                 MENU                                 *");
+    System.out.println("************************************************************************");
+    System.out.println("*                                                                      *");
+    System.out.println("* 1. Create productList.txt which contains list of files in directory. *");
+    System.out.println("* 2. Parse TXT to CSV.                                                 *");
+    System.out.println("* 0. Quit.                                                             *");
+    System.out.println("*                                                                      *");
+    System.out.println("************************************************************************");
+
   }
 
   public void switchMenu() throws IOException {
@@ -22,8 +25,9 @@ public class Menu {
     do {
       menu();
       System.out.println();
-      System.out.println("     Wybierz co chcesz zrobić: ");
-      wybor = scanner.nextInt();
+      System.out.println("Wybierz co chcesz zrobić: ");
+        wybor = scanner.nextInt();
+        scanner.nextLine();
       switch (wybor) {
         case 1:
           createFile();
@@ -33,8 +37,10 @@ public class Menu {
           break;
         case 0:
           quit = true;
+          break;
           default:
             System.out.println("Invalid choice.");
+            break;
       }
     } while (!quit); {
       System.out.println("     ****************************************");
@@ -42,7 +48,7 @@ public class Menu {
     }
   }
 
-  private void shouldParse() {
+  private static void shouldParse() {
     Scanner in = new Scanner(System.in);
     System.out.println("Czy przeparsować plik txt na csv? (Yes/No): ");
     String typeAnswer = in.nextLine();
@@ -53,7 +59,6 @@ public class Menu {
     } else if (typeAnswer.matches("NO".toLowerCase())) {
       System.out.println("Ok no parsing today.");
     }
-    in.close();
   }
 
   private void createFile() throws IOException {
@@ -61,6 +66,5 @@ public class Menu {
     System.out.println("Podaj ścieżkę początkową aby rozpocząć tworzenie listy plików: ");
     FileCreator.listFiles(dirName.nextLine());
     System.out.println("Utworzono plik productsList.txt na dysku pod adresem: " + new ParseToCsv().path);
-    dirName.close();
   }
 }
