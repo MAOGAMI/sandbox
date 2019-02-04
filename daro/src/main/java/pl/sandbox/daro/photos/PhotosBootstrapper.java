@@ -1,6 +1,6 @@
 package pl.sandbox.daro.photos;
 
-import pl.sandbox.daro.photos.base_creator.Menu;
+import pl.sandbox.daro.photos.list_creator.Menu;
 
 import java.io.IOException;
 

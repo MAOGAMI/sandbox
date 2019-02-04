@@ -1,4 +1,4 @@
-package pl.sandbox.daro.photos.base_creator;
+package pl.sandbox.daro.photos.list_creator;
 
 import java.io.*;
 import java.util.ArrayList;
