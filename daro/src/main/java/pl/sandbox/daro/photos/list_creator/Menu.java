@@ -62,9 +62,11 @@ public class Menu {
   }
 
   private void createFile() throws IOException {
-    Scanner dirName = new Scanner(System.in);
-    System.out.println("Podaj ścieżkę początkową aby rozpocząć tworzenie listy plików: ");
-    FileCreator.listFiles(dirName.nextLine());
-    System.out.println("Utworzono plik productsList.txt na dysku pod adresem: " + new ParseToCsv().path);
+    System.out.println("Podaj nazwe pliku docelowego: ");
+    String fileName = scanner.nextLine();
+    System.out.println("Podaj nazwę folderu początkowego: ");
+    String rootDirectory = scanner.nextLine();
+    FileCreator.start(fileName,rootDirectory);
+    System.out.println(String.format("Utworzono plik '%s' na dysku pod adresem: C:\\Users\\Admin\\Desktop\n", fileName));
   }
 }

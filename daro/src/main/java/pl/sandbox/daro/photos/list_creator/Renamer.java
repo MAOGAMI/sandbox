@@ -5,40 +5,28 @@ import java.io.File;
 
 public class Renamer {
 
-  private File oldFile;
-  private File newFile;
+  private static File oldFile;
+  private static File newFile;
 
 
-  private void setOldFile(String directory, String fileName) {
-    this.oldFile = new File (directory,fileName);
-//    oldFile.
+  static void setOldFile(File path) {
+    oldFile = path;
   }
 
-  private void setNewFile(String directory, String fileName) {
-    this.newFile = new File (directory,fileName);
+  static void setNewFile(File path) {
+    newFile = path;
   }
 
-  void fileExists(String directory, String fileName){
-    setOldFile(directory, fileName);
+  public static File getOldFile() {
+    return oldFile;
+  }
+
+  void fileExists(){
+    String fileName = "";
+    String directoryName = "";
     if(!(oldFile.exists())){
-      System.out.println(String.format("File: '%s' in directory '%s' does not exist!", fileName, directory));
+      System.out.println(String.format("File: '%s' in directory '%s' does not exist!", fileName, directoryName));
     }
-  }
-
-
-
-
-
-
-
-
-
-
-
-  public static void main(String[] args) {
-    Renamer renamer = new Renamer();
-
-    renamer.fileExists("O:\\zdjęcia produktów\\aksam","fota.jpg");
   }
 
   //TODO:
