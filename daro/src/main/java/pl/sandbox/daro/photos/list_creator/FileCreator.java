@@ -10,14 +10,15 @@ import java.util.List;
 
 class FileCreator {
 
-  private static String fileName;
+  static String fileName;
 
   private static void setFileName(String name){
      fileName = new SimpleDateFormat(String.format("yyyy-MM-dd HH_mm' %s.txt'", name)).format(new Date());
   }
 
 
-  /**
+  /** This method creates a file which current local timestamp.
+   * Created file contains a list of all files (with their directories) from a given directory
    * @param directoryPath defines a path to directory which has to be listed.
    * @return
    * @throws IOException
@@ -62,6 +63,10 @@ class FileCreator {
     } else {
       System.out.println("type root dir: ");
     }
+  }
+
+  private static void parseToCsv(){
+
   }
 }
 
