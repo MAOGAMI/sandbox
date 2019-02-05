@@ -43,8 +43,9 @@ public class Menu {
             break;
       }
     } while (!quit); {
-      System.out.println("     ****************************************");
-      System.out.println("\n     Koniec programu\n\n");
+      System.out.println("\n****************************************");
+      System.out.println("Koniec programu");
+      System.out.println("****************************************");
     }
   }
 

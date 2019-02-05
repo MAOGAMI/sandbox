@@ -15,7 +15,7 @@ class ParseToCsv {
   private final Path txt = path.resolve("productsList.txt");
 
   void parse(String fileName){
-    final Path csv = path.resolve(new SimpleDateFormat(String.format("yyyy-MM-dd HHmm' %s.csv'", fileName)).format(new Date()));
+    final Path csv = path.resolve(new SimpleDateFormat(String.format("yyyy-MM-dd HH_mm' %s.csv'", fileName)).format(new Date()));
     System.out.println("Parsing...");
     try(final Stream<String> lines = Files.lines(txt);
         final PrintWriter pw = new PrintWriter(Files.newBufferedWriter(csv, CREATE_NEW))) {
